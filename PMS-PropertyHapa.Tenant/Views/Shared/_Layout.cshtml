@@ -1,0 +1,226 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Zeta admin is super flexible, powerful, clean &amp; modern responsive bootstrap 5 admin template with unlimited possibilities.">
+    <meta name="keywords" content="admin template, Zeta admin template, dashboard template, flat admin template, responsive admin template, web app">
+    <meta name="author" content="pixelstrap">
+    <link rel="icon" id="faviconIcon" type="image/x-icon">
+    <link rel="shortcut icon" href="~/Dashboard/assets/images/logo/favicon-icon.png" type="image/x-icon">
+    <title>Tenant Portal</title>
+    <!-- Google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="~/Dashboard/assets/css/vendors/font-awesome.css">
+    <!-- ico-font-->
+    <link rel="stylesheet" type="text/css" href="~/Dashboard/assets/css/vendors/icofont.css">
+    <!-- Themify icon-->
+    <link rel="stylesheet" type="text/css" href="~/Dashboard/assets/css/vendors/themify.css">
+    <!-- Flag icon-->
+    <link rel="stylesheet" type="text/css" href="~/Dashboard/assets/css/vendors/flag-icon.css">
+    <!-- Feather icon-->
+    <link rel="stylesheet" type="text/css" href="~/Dashboard/assets/css/vendors/feather-icon.css">
+    <!-- Plugins css start-->
+    <link rel="stylesheet" type="text/css" href="~/Dashboard/assets/css/vendors/scrollbar.css">
+    <link rel="stylesheet" type="text/css" href="~/Dashboard/assets/css/vendors/animate.css">
+    <link rel="stylesheet" type="text/css" href="~/Dashboard/assets/css/vendors/chartist.css">
+    <link rel="stylesheet" type="text/css" href="~/Dashboard/assets/css/vendors/scrollbar.css">
+    <link rel="stylesheet" type="text/css" href="~/Dashboard/assets/css/vendors/datatables.css">
+    <link rel="stylesheet" type="text/css" href="~/Dashboard/assets/css/vendors/datatable-extension.css">
+    <!-- Plugins css Ends-->
+    <!-- Bootstrap css-->
+    <link rel="stylesheet" type="text/css" href="~/Dashboard/assets/css/vendors/bootstrap.css">
+    <!-- App css-->
+    <link rel="stylesheet" type="text/css" href="~/Dashboard/assets/css/style.css">
+    <link id="color" rel="stylesheet" href="~/Dashboard/assets/css/color-1.css" media="screen">
+    <!-- Responsive css-->
+    <link rel="stylesheet" type="text/css" href="~/Dashboard/assets/css/responsive.css">
+    <style>
+        .landing-page .title {
+            margin-bottom: 0px !important;
+        }
+
+        .total-transactions .report-sec .report-perfom {
+            padding: 20px 0 0;
+            margin-top: 20px !important;
+            padding-left: 60px !important;
+            text-align: center;
+            border-top: 1px solid rgba(30,47,101,0.1);
+        }
+
+        .landing-page .section-py-space {
+            padding-top: 4px !important;
+            padding-bottom: 4px !important;
+        }
+
+        .landing-page .color-theme {
+            background-color: #6362e7;
+        }
+
+        .landing-page .title h1 {
+            font-size: 30px;
+            font-weight: 500;
+            color: white !important;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            width: -webkit-fit-content;
+            width: -moz-fit-content;
+            width: fit-content;
+            text-align: center;
+            margin: auto;
+            white-space: nowrap;
+            padding-bottom: 0;
+        }
+
+        .static-widget {
+            margin-bottom: 0px !important;
+        }
+    </style>
+</head>
+<body class="landing-wrraper">
+    <!-- tap on top starts-->
+    <div class="tap-top"><i data-feather="chevrons-up"></i></div>
+    <!-- tap on tap ends-->
+    <!-- page-wrapper Start-->
+    <div class="page-wrapper landing-page">
+        <!-- header start-->
+        <header class="landing-header">
+            <div class="custom-container">
+                <div class="row">
+                    <div class="col-12">
+                        <nav class="navbar navbar-light p-0" id="navbar-example2">
+                            <a class="navbar-brand" href="@Url.Action("Index","Home")">
+                                <div id="organizationLogoContainer">
+                                    <img id="organizationLogoImg" class="img-fluid" src="" height="108px" width="56px" alt="Organization Logo">
+                                </div>
+                            </a>
+                            <ul class="landing-menu nav nav-pills">
+                                <li class="nav-item menu-back">back<i class="fa fa-angle-right"></i></li>
+                                <li class="nav-item"><a class="nav-link" href="@Url.Action("Index","Home")">HOME</a></li>
+                                <li class="nav-item"><a class="nav-link" href="@Url.Action("Index","Payments")">PAYMENTS</a></li>
+                                <li class="nav-item"><a class="nav-link" href="@Url.Action("Index","Insurance")">INSURANCE</a></li>
+                                <li class="nav-item"><a class="nav-link" href="@Url.Action("Index","Request")">REQUESTS</a></li>
+                                <li class="nav-item"><a class="nav-link" href="@Url.Action("Index","Announcements")">ANNOUNCEMENTS</a></li>
+                                <li class="nav-item"><a class="nav-link" href="@Url.Action("Logout","Auth")">Logout</a></li>
+                            </ul>
+                            <div class="buy-block">
+                                <div class="toggle-menu"><i class="fa fa-bars"></i></div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section class="core-feature section-py-space" id="core-feature" style="padding-top:150px!important">
+            @RenderBody()
+        </section>
+        <section class="color-theme section-py-space">
+            <div class="title">
+                <h1>Property Hapa</h1>
+            </div>
+        </section>
+    </div>
+    <script src="~/Dashboard/assets/js/jquery-3.5.1.min.js"></script>
+    <script src="~/Dashboard/assets/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="~/Dashboard/assets/js/icons/feather-icon/feather.min.js"></script>
+    <script src="~/Dashboard/assets/js/icons/feather-icon/feather-icon.js"></script>
+    <script src="~/Dashboard/assets/js/config.js"></script>
+    <script src="~/Dashboard/assets/js/animation/scroll-reveal/scrollreveal.min.js"></script>
+    <script src="~/Dashboard/assets/js/modernizr.js"></script>
+    <script src="~/Dashboard/assets/js/animation/scroll-reveal/reveal-custom.js"></script>
+    <script src="~/Dashboard/assets/js/owlcarousel/owl.carousel.js"></script>
+    <script src="~/Dashboard/assets/js/owlcarousel/owl-custom.js"></script>
+    <script src="~/Dashboard/assets/js/animation/wow/wow.min.js"></script>
+    <script src="~/Dashboard/assets/js/landing_sticky.js"></script>
+    <script src="~/Dashboard/assets/js/landing.js"></script>
+    <script src="~/Dashboard/assets/js/script.js"></script>
+    <script src="~/Dashboard/assets/js/chart/knob/knob.min.js"></script>
+    <script src="~/Dashboard/assets/js/chart/knob/knob-chart.js"></script>
+    <script src="~/Dashboard/assets/js/chart/apex-chart/apex-chart.js"></script>
+    <script src="~/Dashboard/assets/js/chart/apex-chart/stock-prices.js"></script>
+    <script src="~/Dashboard/assets/js/notify/bootstrap-notify.min.js"></script>
+    <script src="~/Dashboard/assets/js/dashboard/default.js"></script>
+    <script src="~/Dashboard/assets/js/datepicker/date-picker/datepicker.js"></script>
+    <script src="~/Dashboard/assets/js/datepicker/date-picker/datepicker.en.js"></script>
+    <script src="~/Dashboard/assets/js/datepicker/date-picker/datepicker.custom.js"></script>
+    <script src="~/Dashboard/assets/js/photoswipe/photoswipe.min.js"></script>
+    <script src="~/Dashboard/assets/js/photoswipe/photoswipe-ui-default.min.js"></script>
+    <script src="~/Dashboard/assets/js/photoswipe/photoswipe.js"></script>
+    <script src="~/Dashboard/assets/js/typeahead/handlebars.js"></script>
+    <script src="~/Dashboard/assets/js/typeahead/typeahead.bundle.js"></script>
+    <script src="~/Dashboard/assets/js/typeahead/typeahead.custom.js"></script>
+    <script src="~/Dashboard/assets/js/typeahead-search/handlebars.js"></script>
+    <script src="~/Dashboard/assets/js/typeahead-search/typeahead-custom.js"></script>
+    <script src="~/Dashboard/assets/js/height-equal.js"></script>
+    <script src="~/Dashboard/assets/js/chart/chartjs/chart.min.js"></script>
+    <script src="~/Dashboard/assets/js/chart/chartist/chartist.js"></script>
+    <script src="~/Dashboard/assets/js/chart/chartist/chartist-plugin-tooltip.js"></script>
+    <script src="~/Dashboard/assets/js/prism/prism.min.js"></script>
+    <script src="~/Dashboard/assets/js/counter/jquery.waypoints.min.js"></script>
+    <script src="~/Dashboard/assets/js/counter/jquery.counterup.min.js"></script>
+    <script src="~/Dashboard/assets/js/counter/counter-custom.js"></script>
+    <script src="~/Dashboard/assets/js/dashboard/dashboard_2.js"></script>
+    <script src="~/Dashboard/assets/js/tooltip-init.js"></script>
+    <script src="~/Dashboard/assets/js/datatable/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/Dashboard/assets/js/datatable/datatable-extension/dataTables.buttons.min.js"></script>
+    <script src="~/Dashboard/assets/js/datatable/datatable-extension/jszip.min.js"></script>
+    <script src="~/Dashboard/assets/js/datatable/datatable-extension/buttons.colVis.min.js"></script>
+    <script src="~/Dashboard/assets/js/datatable/datatable-extension/pdfmake.min.js"></script>
+    <script src="~/Dashboard/assets/js/datatable/datatable-extension/vfs_fonts.js"></script>
+    <script src="~/Dashboard/assets/js/datatable/datatable-extension/dataTables.autoFill.min.js"></script>
+    <script src="~/Dashboard/assets/js/datatable/datatable-extension/dataTables.select.min.js"></script>
+    <script src="~/Dashboard/assets/js/datatable/datatable-extension/buttons.bootstrap4.min.js"></script>
+    <script src="~/Dashboard/assets/js/datatable/datatable-extension/buttons.html5.min.js"></script>
+    <script src="~/Dashboard/assets/js/datatable/datatable-extension/buttons.print.min.js"></script>
+    <script src="~/Dashboard/assets/js/datatable/datatable-extension/dataTables.bootstrap4.min.js"></script>
+    <script src="~/Dashboard/assets/js/datatable/datatable-extension/dataTables.responsive.min.js"></script>
+    <script src="~/Dashboard/assets/js/datatable/datatable-extension/responsive.bootstrap4.min.js"></script>
+    <script src="~/Dashboard/assets/js/datatable/datatable-extension/dataTables.keyTable.min.js"></script>
+    <script src="~/Dashboard/assets/js/datatable/datatable-extension/dataTables.colReorder.min.js"></script>
+    <script src="~/Dashboard/assets/js/datatable/datatable-extension/dataTables.fixedHeader.min.js"></script>
+    <script src="~/Dashboard/assets/js/datatable/datatable-extension/dataTables.rowReorder.min.js"></script>
+    <script src="~/Dashboard/assets/js/datatable/datatable-extension/dataTables.scroller.min.js"></script>
+    <script src="~/Dashboard/assets/js/datatable/datatable-extension/custom.js"></script>
+    <script src="~/Dashboard/assets/js/theme-customizer/customizer.js"></script>
+
+    <script>
+
+
+        var organizationLogoBase64 = localStorage.getItem('organizationLogo');
+
+
+        if (organizationLogoBase64) {
+
+            var organizationLogoDataURI = 'data:image;base64,' + organizationLogoBase64;
+
+            document.getElementById('organizationLogoImg').src = organizationLogoDataURI;
+        } else {
+            document.getElementById('organizationLogoContainer').style.display = 'none';
+        }
+
+
+        debugger;
+        var organizationIconBase64 = localStorage.getItem('organizationIcon');
+        console.log('organizationIconBase64:', organizationIconBase64); 
+
+        if (organizationIconBase64) {
+            var organizationIconDataURI = 'data:image;base64,' + organizationIconBase64;
+            var faviconIcon = document.getElementById('faviconIcon');
+            if (faviconIcon) {
+                faviconIcon.href = organizationIconDataURI;
+            } else {
+                console.error('faviconIcon element not found');
+            }
+        } else {
+            console.error('organizationIconBase64 is empty or not found in localStorage');
+        }
+
+
+
+    </script>
+</body>
+</html>

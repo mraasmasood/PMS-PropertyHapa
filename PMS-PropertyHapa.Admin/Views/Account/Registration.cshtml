@@ -1,0 +1,41 @@
+﻿@model PMS_PropertyHapa.Models.DTO.RegisterationRequestDTO
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form class="theme-form register-form needs-validation" novalidate asp-action="Registration" asp-controller="Account" method="post">
+                <div class="border p-4">
+                    <div class="text-center mb-4">
+                        <h1>Add New Tenant</h1>
+                    </div>
+                    <div asp-validation-summary="All" class="text-danger text-center"></div>
+                    <div class="mb-3">
+                        <input asp-for="UserName" type="text" class="form-control" placeholder="Username..." autocomplete="off" required>
+                    </div>
+                    <div class="mb-3">
+                        <input asp-for="Name" type="text" class="form-control" placeholder="Name..." autocomplete="off" required>
+                    </div>
+                    <div class="mb-3">
+                        <input asp-for="Email" type="text" class="form-control" placeholder="Email..." autocomplete="off" required>
+                    </div>
+                    <div class="mb-3">
+                        <input asp-for="Password" type="password" class="form-control" placeholder="Password..." autocomplete="off" required>
+                    </div>
+                    <div class="mb-3">
+                        <select asp-for="Role" class="form-select" required>
+                            <option value="Tenant">Tenant</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-success w-100 mb-3">Register</button>
+                    <a class="btn btn-primary w-100" href="javascript:history.back()">Go Back</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+

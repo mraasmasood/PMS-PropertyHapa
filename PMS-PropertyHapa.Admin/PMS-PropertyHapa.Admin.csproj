@@ -1,0 +1,88 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+	  <UseRazorSourceGenerator>false</UseRazorSourceGenerator>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>PMS_PropertyHapa.Admin</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="FluentFTP" Version="49.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.Abstractions" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.1.39" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.1.1" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Analyzers" Version="6.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="6.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.16" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PMS-PropertyHapa.MigrationsFiles\PMS-PropertyHapa.MigrationsFiles.csproj" />
+    <ProjectReference Include="..\PMS-PropertyHapa.Models\PMS-PropertyHapa.Models.csproj" />
+    <ProjectReference Include="..\PMS-PropertyHapa.Shared\PMS-PropertyHapa.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Views\Shared\_Layout.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\Shared\_IdentityLayout.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Views\Shared\_IdentityLayout.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\Admin\Create.cshtml" />
+    <None Include="Views\Admin\Index.cshtml" />
+    <None Include="Views\Admin\Update.cshtml" />
+    <None Include="Views\GroupRoles\Index.cshtml" />
+    <None Include="Views\Groups\Create.cshtml" />
+    <None Include="Views\Groups\Index.cshtml" />
+    <None Include="Views\Groups\Update.cshtml" />
+    <None Include="wwwroot\Dashboard\assets\datatables-buttons\js\buttons.bootstrap4.js" />
+    <None Include="wwwroot\Dashboard\assets\datatables-buttons\js\buttons.bootstrap4.min.js" />
+    <None Include="wwwroot\Dashboard\assets\datatables-buttons\js\buttons.colVis.js" />
+    <None Include="wwwroot\Dashboard\assets\datatables-buttons\js\buttons.colVis.min.js" />
+    <None Include="wwwroot\Dashboard\assets\datatables-buttons\js\buttons.flash.js" />
+    <None Include="wwwroot\Dashboard\assets\datatables-buttons\js\buttons.flash.min.js" />
+    <None Include="wwwroot\Dashboard\assets\datatables-buttons\js\buttons.html5.js" />
+    <None Include="wwwroot\Dashboard\assets\datatables-buttons\js\buttons.html5.min.js" />
+    <None Include="wwwroot\Dashboard\assets\datatables-buttons\js\buttons.print.js" />
+    <None Include="wwwroot\Dashboard\assets\datatables-buttons\js\buttons.print.min.js" />
+    <None Include="wwwroot\Dashboard\assets\datatables-buttons\js\dataTables.buttons.js" />
+    <None Include="wwwroot\Dashboard\assets\datatables-buttons\js\dataTables.buttons.min.js" />
+    <None Include="wwwroot\Dashboard\assets\pdfmake\pdfmake.js" />
+    <None Include="wwwroot\Dashboard\assets\pdfmake\pdfmake.js.map" />
+    <None Include="wwwroot\Dashboard\assets\pdfmake\pdfmake.min.js" />
+    <None Include="wwwroot\Dashboard\assets\pdfmake\pdfmake.min.js.map" />
+    <None Include="wwwroot\Dashboard\assets\pdfmake\vfs_fonts.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\uploads\" />
+  </ItemGroup>
+
+</Project>

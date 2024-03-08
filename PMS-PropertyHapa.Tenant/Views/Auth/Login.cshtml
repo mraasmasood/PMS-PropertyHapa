@@ -1,0 +1,100 @@
+﻿@model PMS_PropertyHapa.Models.DTO.LoginRequestDTO
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_IdentityLayout.cshtml";
+}
+<style>
+    .input-group {
+        position: relative;
+    }
+
+    .show-hide {
+        position: absolute;
+        right: 35px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+    }
+</style>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script>
+        $(function () {
+            $('.show-hide').click(function () {
+                var $passwordField = $('#Password');
+                var fieldType = $passwordField.attr('type');
+                if (fieldType === 'password') {
+                    $passwordField.attr('type', 'text');
+                    $('.show-hide i').removeClass('bi-eye').addClass('bi-eye-slash');
+                } else {
+                    $passwordField.attr('type', 'password');
+                    $('.show-hide i').removeClass('bi-eye-slash').addClass('bi-eye');
+                }
+            });
+
+            $('.login-form').submit(function (e) {
+                e.preventDefault();
+                var formData = $(this).serialize();
+                $.ajax({
+                    url: '@Url.Action("Login", "Auth")',
+                    type: 'POST',
+                    data: formData,
+                    success: function (response) {
+                        if (response.success) {
+                            localStorage.setItem('userId', response.result);
+                            if (response.organization && response.organization.tenant) {
+                                localStorage.setItem('organizationLogo', response.organization.tenant);
+                            }
+                            if (response.organization && response.organization.icon) {
+                                localStorage.setItem('organizationIcon', response.organization.icon);
+                            }
+                            var Toast = Swal.mixin({ toast: true, position: 'top-end', showConfirmButton: false, progressBar: true, timer: 3000 });
+                            Toast.fire({ icon: 'success', title: response.message });
+                            window.location.href = '@Url.Action("Index", "Home")';
+                        } else {
+                            var Toast = Swal.mixin({ toast: true, position: 'top-end', showConfirmButton: false, progressBar: true, timer: 3000 });
+                            Toast.fire({ icon: 'error', title: response.message });
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        Swal.fire('Error', 'An error occurred during login.', 'error');
+                    }
+                });
+            });
+        });
+    </script>
+}
+
+<form class="theme-form login-form needs-validation" novalidate method="post">
+    @Html.AntiForgeryToken()
+    <h4>Tenant Login</h4>
+    <h6>Welcome back! Log in to your account.</h6>
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        <label>Email Address</label>
+        <div class="input-group">
+            <span class="input-group-text"><i class="icon-email"></i></span>
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Email...", required = "required" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Password</label>
+        <div class="input-group">
+            <span class="input-group-text"><i class="icon-lock"></i></span>
+            @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Password...", required = "required" })
+            <div class="input-group-append">
+                <span class="show-hide" style="cursor: pointer;"><i class="bi bi-eye"></i></span>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="icheck-primary">
+            <a class="link" href="@Url.Action("ForgotPassword", "Auth")">Forgot password?</a>
+        </div>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary btn-block" type="submit">Sign in</button>
+    </div>
+</form>
