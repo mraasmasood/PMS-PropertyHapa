@@ -83,9 +83,10 @@ namespace PMS_PropertyHapa.Staff.Controllers
         {
             return View();
         }
-        public IActionResult AddAssest()
+        public async Task<IActionResult> AddAssest()
         {
-            return View();
+            var landlords = await _authService.GetAllLandlordAsync();
+            return View(landlords);
         }
     }
 }
